@@ -88,7 +88,6 @@ const Side = styled.div`
   @media (${QUERIES.laptopAndUp}) {
     flex: 1;
   }
-  
 
 `;
 
