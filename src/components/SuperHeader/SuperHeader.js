@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS } from '../../constants';
+import { COLORS, QUERIES } from '../../constants';
 
 import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
-import { QUERIES } from '../../constants';
 
 const SuperHeader = () => {
   return (
     <>
       <DecorativeBar />
       <Wrapper>
-
         <MarketingMessage>
           Free shipping on domestic orders over $75!
         </MarketingMessage>
