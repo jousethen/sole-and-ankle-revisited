@@ -18,6 +18,10 @@ const Header = () => {
 
   return (
     <header>
+      <MobileMenu
+        isOpen={showMobileMenu}
+        onDismiss={() => setShowMobileMenu(false)}
+      />
       <SuperHeader />
       <MainHeader>
         <Side>
@@ -48,10 +52,7 @@ const Header = () => {
         <Side />
       </MainHeader>
 
-      <MobileMenu
-        isOpen={showMobileMenu}
-        onDismiss={() => setShowMobileMenu(false)}
-      />
+
     </header>
   );
 };
