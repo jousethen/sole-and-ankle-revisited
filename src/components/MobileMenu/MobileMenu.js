@@ -13,6 +13,10 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   return (
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
       <Content>
+        <CloseButton onClick={() => onDismiss()}>
+          <Icon id="close" strokeWidth={2} />
+          <VisuallyHidden>Close</VisuallyHidden>
+        </CloseButton>
         <ModalNav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -48,8 +52,22 @@ const Content = styled(DialogContent)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 0 32px 32px;`
-
+  padding: 0 0 32px 32px;
+`
+const CloseButton = styled.button`
+  position: absolute;
+  top: 32px;
+  right: 22px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  &:focus {
+    outline-offset: 2px;
+  }
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+`
 const ModalNav = styled.nav`
 display: flex;
 flex-direction: column;
