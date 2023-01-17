@@ -34,11 +34,11 @@ const Select = ({ label, value, children, ...delegated }) => {
 };
 
 const Wrapper = styled.label`
-  display: none;
+  display: flex;
   align-items: baseline;
 
-  @media (${QUERIES.laptopAndUp}) {
-    display: flex;  
+  @media (${QUERIES.mobileAndDown}) {
+     display: none; 
   }
 `;
 

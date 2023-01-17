@@ -44,10 +44,11 @@ const Header = () => {
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
+          <NavLink href="/menss">Men</NavLink>
           <NavLink href="/women">Women</NavLink>
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
+
         </Nav>
         <Side />
       </MainHeader>
@@ -67,14 +68,18 @@ const MainHeader = styled.div`
 `;
 
 const Nav = styled.nav`
-
 display: flex;
-gap: 48px;
+gap: clamp(
+    1.5rem,
+    6vw - 2.5rem,
+    3rem
+  );
 margin: 0px 48px;
 
 @media (${QUERIES.tabletAndDown}) {
   display: none;
 }
+overflow-x:auto;
 `;
 
 const ResponsiveNav = styled.div`
