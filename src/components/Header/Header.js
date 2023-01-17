@@ -5,8 +5,8 @@ import { COLORS, WEIGHTS, QUERIES } from '../../constants';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
-import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
+import VisuallyHidden from '../VisuallyHidden';
 import Icon from '../Icon';
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -26,12 +26,15 @@ const Header = () => {
         <ResponsiveNav>
           <UnstyledButton>
             <Icon id="shopping-bag" strokeWidth={1} />
+            <VisuallyHidden>Open Cart</VisuallyHidden>
           </UnstyledButton>
           <UnstyledButton>
             <Icon id="search" strokeWidth={1} />
+            <VisuallyHidden>Search</VisuallyHidden>
           </UnstyledButton>
           <UnstyledButton onClick={() => setShowMobileMenu(true)}>
             <Icon id='menu' strokeWidth={1} />
+            <VisuallyHidden>Open Menu</VisuallyHidden>
           </UnstyledButton>
         </ResponsiveNav>
         <Nav>
@@ -63,32 +66,34 @@ const MainHeader = styled.div`
 `;
 
 const Nav = styled.nav`
-@media (${QUERIES.laptopAndUp}) {
-  display: flex;
-  gap: 48px;
-  margin: 0px 48px;
+
+display: flex;
+gap: 48px;
+margin: 0px 48px;
+
+@media (${QUERIES.tabletAndDown}) {
+  display: none;
 }
-display: none;
 `;
 
 const ResponsiveNav = styled.div`
+display: none;
+
+@media (${QUERIES.tabletAndDown}) {
   display: flex;
   gap: 28px;
   margin-left: auto; 
+}
 
-
-  @media (${QUERIES.laptopAndUp}) {
-    display: none;
-  }
 `;
 
 const Side = styled.div`
+flex: 1;
+
+@media (${QUERIES.tabletAndDown}) {
   width: fit-content;
-
-  @media (${QUERIES.laptopAndUp}) {
-    flex: 1;
-  }
-
+  flex: 0;
+}
 `;
 
 const NavLink = styled.a`

@@ -27,30 +27,30 @@ const SuperHeader = () => {
 
 const Wrapper = styled.div`
 
- @media (${QUERIES.laptopAndUp}) {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    font-size: 0.875rem;
-    color: ${COLORS.gray[300]};
-    background-color: ${COLORS.gray[900]};
-    height: 40px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
 
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 0.875rem;
+  color: ${COLORS.gray[300]};
+  background-color: ${COLORS.gray[900]};
+  height: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  
+  @media (${QUERIES.tabletAndDown}) {
+    display: none;
+  }
 `;
 
 const DecorativeBar = styled.div`
-display: block;
-height: 4px;
-width: 100%;
-background-color: ${COLORS.gray[900]};
+  display: none;
 
-
-@media (${QUERIES.laptopAndUp}) {
-    display: none;
+  @media (${QUERIES.tabletAndDown}) {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: ${COLORS.gray[900]};
   }
 
 `
